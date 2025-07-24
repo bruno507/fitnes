@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/fitnes"
+            auth="Container"
+            type="javax.sql.DataSource"
+			driverClassName="com.mysql.cj.jdbc.Driver"
+            url="jdbc:mysql://localhost:3306/fitnes"
+            connectionProperties="useUnicode=yes;characterEncoding=utf8;"
+            username="user11"
+            password="1"
+            maxTotal="8"
+            maxIdle="10" >
+	</Resource>
+	<Realm  className="org.apache.catalina.realm.DataSourceRealm"
+			localDataSource="true"
+			userTable="user"
+			userNameCol="id"
+			userCredCol="pass"
+			userRoleTable="user"
+			roleNameCol="role"
+			dataSourceName="jdbc/fitnes" >
+		<CredentialHandler className="org.apache.catalina.realm.MessageDigestCredentialHandler"
+						   algorithm="SHA-256" iterations="1" saltLength="0" encoding="UTF-8" />
+	</Realm>
+</Context>
