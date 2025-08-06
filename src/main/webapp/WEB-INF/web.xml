@@ -79,6 +79,8 @@
     <error-page>
         <error-code>404</error-code>
         <location>/404error.jsp</location>
+    </error-page><error-page>
+        <location>/runError.jsp</location>
     </error-page>
     <security-role>
         <description>User</description>
